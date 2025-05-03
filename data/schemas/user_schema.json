@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "required": ["id", "email", "username", "address"],
+  "properties": {
+    "id": { "type": "number" },
+    "email": { "type": "string" },
+    "username": { "type": "string" },
+    "address": {
+      "type": "object",
+      "properties": {
+        "city": { "type": "string" },
+        "zipcode": { "type": "string" }
+      }
+    }
+  }
+}
