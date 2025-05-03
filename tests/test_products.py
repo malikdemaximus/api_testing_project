@@ -1,15 +1,12 @@
 # tests/test_products.py
 
 from utils.api_client import get
+from utils.schema_validator import validate_schema
 
 def test_get_all_products_status_code():
     response = get("products")
     assert response.status_code == 200
 
-def test_first_product_has_required_fields():
-    response = get("products")
-    product = response.json()[0]
-    assert "id" in product
-    assert "title" in product
-    assert "price" in product
-    assert "category" in product
+def test_validate_product_schema():
+    response = get("products/1")
+    validate_schema(response.json(), "data/schemas/product_schema.json")
