@@ -8,6 +8,13 @@ This project performs API tests on [Fake Store API](https://fakestoreapi.com) us
 - JSON Schema
 - Allure (optional)
 
+## 📊 Allure Report (Optional)
+
+```bash
+pytest --alluredir=allure-results
+allure serve allure-results
+
+
 ## 🚀 How to run
 
 ```bash
